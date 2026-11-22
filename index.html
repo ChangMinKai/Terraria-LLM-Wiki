@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport"
+      content="width=device-width, initial-scale=1">
+<title>克蘇魯之腦的戰鬥攻略</title>
+
+<style>
+:root {
+    color-scheme: dark;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    background:
+        radial-gradient(
+            circle at top,
+            #244d38 0%,
+            #101c18 58%,
+            #09110e 100%
+        );
+    color: #f1f6ec;
+    font-family:
+        "Microsoft JhengHei",
+        "Noto Sans TC",
+        sans-serif;
+}
+
+.app {
+    width: min(1000px, 94%);
+    margin: 36px auto;
+}
+
+.header {
+    margin-bottom: 22px;
+    text-align: center;
+}
+
+.header .eyebrow {
+    color: #a5d18a;
+    letter-spacing: 3px;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.header h1 {
+    font-size: clamp(22px, 3vw, 34px);
+    margin: 12px 0;
+}
+
+.deck {
+    border: 1px solid #5e8658;
+    border-radius: 16px;
+    background: rgba(17, 37, 28, .94);
+    box-shadow: 0 18px 55px rgba(0,0,0,.35);
+    overflow: hidden;
+}
+
+.slide {
+    display: none;
+    min-height: 590px;
+    padding: 42px 52px;
+    flex-direction: column;
+}
+
+.slide.active {
+    display: flex;
+}
+
+.slide-number {
+    color: #9dcc7e;
+    letter-spacing: 2px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.slide h2 {
+    color: #e7f6d4;
+    font-size: clamp(24px, 3vw, 34px);
+    margin: 24px 0;
+}
+
+.bullet-list {
+    padding-left: 28px;
+    margin: 0;
+    font-size: 19px;
+    line-height: 1.85;
+}
+
+.bullet-list li {
+    margin-bottom: 8px;
+}
+
+.bullet-list li::marker {
+    color: #8ed16d;
+}
+
+.explanation {
+    background: #213e2c;
+    border-left: 4px solid #9bd66f;
+    border-radius: 8px;
+    padding: 18px 22px;
+    margin-top: 26px;
+}
+
+.explanation-label {
+    font-size: 13px;
+    font-weight: bold;
+    color: #bce69a;
+    margin-bottom: 8px;
+}
+
+.explanation p {
+    margin: 0;
+    line-height: 1.85;
+    font-size: 16px;
+    white-space: pre-wrap;
+}
+
+.sources {
+    border-top: 1px solid #47644b;
+    margin-top: auto;
+    padding-top: 20px;
+    font-size: 13px;
+    color: #b7c7b4;
+}
+
+.sources a {
+    color: #a9d98e;
+    text-decoration: none;
+    line-height: 1.8;
+}
+
+.sources a:hover {
+    text-decoration: underline;
+}
+
+.controls {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    margin-top: 20px;
+}
+
+button {
+    border: 1px solid #7fa86b;
+    border-radius: 9px;
+    background: #284c32;
+    color: #f3f9eb;
+    font-size: 16px;
+    padding: 12px 22px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #396a43;
+}
+
+button:disabled {
+    opacity: .35;
+    cursor: not-allowed;
+}
+
+.counter {
+    color: #c7ddbb;
+    font-size: 15px;
+}
+
+.progress {
+    height: 5px;
+    background: #233b2c;
+    margin-top: 18px;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.progress-bar {
+    height: 100%;
+    width: 0%;
+    background: #9bd66f;
+    transition: width .25s ease;
+}
+
+@media (max-width: 650px) {
+    .slide {
+        padding: 26px 22px;
+        min-height: 650px;
+    }
+
+    .bullet-list {
+        font-size: 16px;
+    }
+
+    .controls button {
+        padding: 10px 12px;
+        font-size: 14px;
+    }
+}
+
+@media print {
+    body {
+        background: white;
+    }
+
+    .app {
+        width: 100%;
+        margin: 0;
+    }
+
+    .header, .controls, .progress {
+        display: none;
+    }
+
+    .deck {
+        border: none;
+        box-shadow: none;
+    }
+
+    .slide {
+        display: flex !important;
+        page-break-after: always;
+        break-after: page;
+        min-height: 90vh;
+        background: #10251a;
+        print-color-adjust: exact;
+        -webkit-print-color-adjust: exact;
+    }
+}
+</style>
+</head>
+
+<body>
+<div class="app">
+    <header class="header">
+        <div class="eyebrow">
+            TERRARIA LLM WIKI
+        </div>
+        <h1>克蘇魯之腦的戰鬥攻略</h1>
+    </header>
+
+    <main class="deck">
+        
+        <section class="slide active">
+            <div class="slide-number">
+                TERRARIA WIKI · 01
+            </div>
+
+            <h2>主題介紹：克蘇魯之腦</h2>
+
+            <ul class="bullet-list">
+                <li>血腥之地（Crimson）的代表性Boss</li><li>擊敗它可獲得組織碎片與猩紅礦石</li><li>首次戰勝可解鎖酒館老闆並促使隕石落下</li>
+            </ul>
+
+            <div class="explanation">
+                <div class="explanation-label">
+                    攻略說明
+                </div>
+                <p>克蘇魯之腦是泰拉瑞亞中血腥之地的主要Boss，透過使用血腥脊椎（Bloody Spine）或砸碎猩紅之心來召喚。擊敗它不僅能推進遊戲進度，還能獲得重要的製作材料。</p>
+            </div>
+
+            <div class="sources">
+                <strong>資料來源</strong>
+                <div><a href="https://terraria.wiki.gg/zh/wiki/%E5%85%8B%E8%8B%8F%E9%B2%81%E4%B9%8B%E8%84%91" target="_blank" rel="noopener noreferrer">克苏鲁之脑 [006-003]</a>、<a href="https://terraria.wiki.gg/zh/wiki/%E5%85%8B%E8%8B%8F%E9%B2%81%E4%B9%8B%E8%84%91" target="_blank" rel="noopener noreferrer">克苏鲁之脑 [006-008]</a></div>
+            </div>
+        </section>
+        
+
+        <section class="slide">
+            <div class="slide-number">
+                TERRARIA WIKI · 02
+            </div>
+
+            <h2>戰前準備與核心知識</h2>
+
+            <ul class="bullet-list">
+                <li>第一階段本體無敵，周圍有20個飛眼怪環繞</li><li>飛眼怪擊殺後不會重生，需全數擊破才能進入第二階段</li><li>專家與大師模式下，敵人接觸玩家會施加隨機負面狀態</li>
+            </ul>
+
+            <div class="explanation">
+                <div class="explanation-label">
+                    攻略說明
+                </div>
+                <p>戰鬥分為兩個階段。在第一階段中，克蘇魯之腦本體免疫傷害，玩家必須先擊敗所有20個飛眼怪（Creepers）。同時需注意專家模式下的各種隨機debuff效果。</p>
+            </div>
+
+            <div class="sources">
+                <strong>資料來源</strong>
+                <div><a href="https://terraria.wiki.gg/zh/wiki/%E5%85%8B%E8%8B%8F%E9%B2%81%E4%B9%8B%E8%84%91" target="_blank" rel="noopener noreferrer">克苏鲁之脑 [006-004]</a>、<a href="https://terraria.wiki.gg/zh/wiki/%E5%85%8B%E8%8B%8F%E9%B2%81%E4%B9%8B%E8%84%91" target="_blank" rel="noopener noreferrer">克苏鲁之脑 [006-005]</a>、<a href="https://terraria.wiki.gg/zh/wiki/%E5%85%8B%E8%8B%8F%E9%B2%81%E4%B9%8B%E8%84%91" target="_blank" rel="noopener noreferrer">克苏鲁之脑 [006-006]</a></div>
+            </div>
+        </section>
+        
+
+        <section class="slide">
+            <div class="slide-number">
+                TERRARIA WIKI · 03
+            </div>
+
+            <h2>主要機制與操作步驟</h2>
+
+            <ul class="bullet-list">
+                <li>利用穿透性武器（如傑斯特之箭）同時打擊多個飛眼怪</li><li>使用高擊退武器（如三叉戟或腐叉）保持距離</li><li>第二階段本體露出心臟，會頻繁傳送並衝撞玩家</li>
+            </ul>
+
+            <div class="explanation">
+                <div class="explanation-label">
+                    攻略說明
+                </div>
+                <p>在第一階段中，由於飛眼怪經常聚集，使用穿透武器或手榴彈等範圍傷害能大幅提升效率。進入第二階段後，本體會直接受到傷害並能被擊退，此時可使用迷你鯊等武器拉開距離。</p>
+            </div>
+
+            <div class="sources">
+                <strong>資料來源</strong>
+                <div><a href="https://terraria.wiki.gg/zh/wiki/%E5%85%8B%E8%8B%8F%E9%B2%81%E4%B9%8B%E8%84%91" target="_blank" rel="noopener noreferrer">克苏鲁之脑 [006-010]</a>、<a href="https://terraria.wiki.gg/zh/wiki/%E5%85%8B%E8%8B%8F%E9%B2%81%E4%B9%8B%E8%84%91" target="_blank" rel="noopener noreferrer">克苏鲁之脑 [006-005]</a>、<a href="https://terraria.wiki.gg/zh/wiki/%E5%85%8B%E8%8B%8F%E9%B2%81%E4%B9%8B%E8%84%91" target="_blank" rel="noopener noreferrer">克苏鲁之脑 [006-011]</a></div>
+            </div>
+        </section>
+        
+
+        <section class="slide">
+            <div class="slide-number">
+                TERRARIA WIKI · 04
+            </div>
+
+            <h2>攻略建議與實際應用</h2>
+
+            <ul class="bullet-list">
+                <li>專家模式下可利用血量條、骨頭標槍或史萊姆坐騎辨識真身</li><li>若離開血腥之地，王會向下移動並最終消失</li><li>即使不擊殺本體，僅擊殺飛眼怪獲取材料也能推進部分進度</li>
+            </ul>
+
+            <div class="explanation">
+                <div class="explanation-label">
+                    攻略說明
+                </div>
+                <p>在專家模式的第二階段會出現多個幻影，玩家可透過僅在真身顯示的血量條、負面效果或標槍判定來找出本體。另外，若不慎離開血腥之地生態系，Boss將會逃跑。</p>
+            </div>
+
+            <div class="sources">
+                <strong>資料來源</strong>
+                <div><a href="https://terraria.wiki.gg/zh/wiki/%E5%85%8B%E8%8B%8F%E9%B2%81%E4%B9%8B%E8%84%91" target="_blank" rel="noopener noreferrer">克苏鲁之脑 [006-011]</a>、<a href="https://terraria.wiki.gg/zh/wiki/%E5%85%8B%E8%8B%8F%E9%B2%81%E4%B9%8B%E8%84%91" target="_blank" rel="noopener noreferrer">克苏鲁之脑 [006-007]</a>、<a href="https://terraria.wiki.gg/zh/wiki/%E5%85%8B%E8%8B%8F%E9%B2%81%E4%B9%8B%E8%84%91" target="_blank" rel="noopener noreferrer">克苏鲁之脑 [006-008]</a></div>
+            </div>
+        </section>
+        
+
+        <section class="slide">
+            <div class="slide-number">
+                TERRARIA WIKI · 05
+            </div>
+
+            <h2>重點整理</h2>
+
+            <ul class="bullet-list">
+                <li>分階段擊破：先清光20個飛眼怪再攻擊本體心臟</li><li>善用裝備與特性：利用擊退、穿透傷害與專家模式辨真身技巧</li><li>戰利品價值高：掉落物可用於製作強力裝備與賺取金錢</li>
+            </ul>
+
+            <div class="explanation">
+                <div class="explanation-label">
+                    攻略說明
+                </div>
+                <p>總結來說，克蘇魯之腦的攻略核心在於掌握雙階段特性、善用特定武器清理飛眼怪，並在專家模式中辨別真身。戰勝後獲得的材料對遊戲前期的發展極具價值。</p>
+            </div>
+
+            <div class="sources">
+                <strong>資料來源</strong>
+                <div><a href="https://terraria.wiki.gg/zh/wiki/%E5%85%8B%E8%8B%8F%E9%B2%81%E4%B9%8B%E8%84%91" target="_blank" rel="noopener noreferrer">克苏鲁之脑 [006-004]</a>、<a href="https://terraria.wiki.gg/zh/wiki/%E5%85%8B%E8%8B%8F%E9%B2%81%E4%B9%8B%E8%84%91" target="_blank" rel="noopener noreferrer">克苏鲁之脑 [006-005]</a>、<a href="https://terraria.wiki.gg/zh/wiki/%E5%85%8B%E8%8B%8F%E9%B2%81%E4%B9%8B%E8%84%91" target="_blank" rel="noopener noreferrer">克苏鲁之脑 [006-011]</a>、<a href="https://terraria.wiki.gg/zh/wiki/%E5%85%8B%E8%8B%8F%E9%B2%81%E4%B9%8B%E8%84%91" target="_blank" rel="noopener noreferrer">克苏鲁之脑 [006-008]</a></div>
+            </div>
+        </section>
+        
+    </main>
+
+    <div class="controls">
+        <button id="prev" onclick="changeSlide(-1)">
+            上一頁
+        </button>
+
+        <span class="counter" id="counter"></span>
+
+        <button id="next" onclick="changeSlide(1)">
+            下一頁
+        </button>
+    </div>
+
+    <div class="progress">
+        <div class="progress-bar" id="progress"></div>
+    </div>
+</div>
+
+<script>
+const slides = Array.from(
+    document.querySelectorAll(".slide")
+);
+
+let current = 0;
+
+function showSlide(index) {
+    current = Math.max(
+        0, Math.min(index, slides.length - 1)
+    );
+
+    slides.forEach((slide, i) => {
+        slide.classList.toggle("active", i === current);
+    });
+
+    document.getElementById("counter").textContent =
+        `${current + 1} / ${slides.length}`;
+
+    document.getElementById("prev").disabled =
+        current === 0;
+
+    document.getElementById("next").disabled =
+        current === slides.length - 1;
+
+    document.getElementById("progress").style.width =
+        `${(current + 1) / slides.length * 100}%`;
+}
+
+function changeSlide(step) {
+    showSlide(current + step);
+}
+
+document.addEventListener("keydown", (event) => {
+    if (event.key === "ArrowRight") changeSlide(1);
+    if (event.key === "ArrowLeft") changeSlide(-1);
+});
+
+showSlide(0);
+</script>
+</body>
+</html>
